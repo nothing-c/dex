@@ -16,6 +16,8 @@ sub details($) { my $n=shift; die "Contact $n does not exist" unless exists $C{$
 
 sub listc() { for (sort keys %C) { say $_; } }
 
+sub existp($) { return True if exists $C{$_[0]}; return False; }
+
 help unless @ARGV;
 
 # load from file
@@ -24,8 +26,9 @@ open my $f,"<",$F; %C=%{decode_json join '',(<$f>)}; close $f;
 # dump details of person; existence is checked in details()
 if ($ARGV[0] !~ /-\w/) {say details $ARGV[0]; exit;}
 
-getopts 'lh';
+getopts 'lhe:';
 listc if $opt_l;
+say existp $opt_e if $opt_e;
 help if $opt_h;
 
 
