@@ -3,12 +3,9 @@
 =head1 Dex: CLI rolodex for the modern age
 
 
-
-ability to add custom tags and query them w/ long options (e.g., dex 'kit kat' --discord)
-
+=head2 DONE
 basic input: dex [contact] to list details
 
-=head2 DONE
 help: dex OR dex -h
 list all contacts: dex -l
 contact exists?: dex -e [contact]
@@ -21,9 +18,9 @@ store as json and serialize/deserialize to perl
 =head2 TODO
 pop into $editor to create new contacts
 
-imports from thunderbird, gcontacts, etc
+fill out help function
 
-enforcing full uppercase
+imports from thunderbird, gcontacts, etc
 
 output anki cards of contact name and info
 
