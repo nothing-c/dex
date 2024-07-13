@@ -1,0 +1,31 @@
+=pod
+
+=head1 Dex: CLI rolodex for the modern age
+
+incl. stuff for discord, steam, etc along with the usual phone/address/email combo
+
+ability to add custom tags and query them w/ long options (e.g., dex 'kit kat' --discord)
+
+basic input: dex [contact] to list details
+
+list all contacts, check if exists, update, delete, etc
+
+store as json and serialize/deserialize to perl
+
+pop into $editor to create new contacts
+
+imports from thunderbird, gcontacts, etc
+
+listing what platforms a contact is on (can use this to find unions for mass communication)
+
+
+
+
+
+
+
+
+
+
+
+=cut
