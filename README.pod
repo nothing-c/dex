@@ -10,22 +10,18 @@ basic input: dex [contact] to list details
 
 list all contacts, check if exists, update, delete, etc
 
+listing what platforms a contact is on (can use this to find unions for mass communication)
+
 store as json and serialize/deserialize to perl
 
 pop into $editor to create new contacts
 
 imports from thunderbird, gcontacts, etc
 
-listing what platforms a contact is on (can use this to find unions for mass communication)
+output anki cards of contact name and info
 
-
-
-
-
-
-
-
-
-
+https://perldoc.perl.org/Getopt::Std
+https://perldoc.perl.org/Getopt::Long
+https://perldoc.perl.org/JSON::PP
 
 =cut
