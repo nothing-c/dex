@@ -2,26 +2,34 @@
 
 =head1 Dex: CLI rolodex for the modern age
 
-incl. stuff for discord, steam, etc along with the usual phone/address/email combo
+
 
 ability to add custom tags and query them w/ long options (e.g., dex 'kit kat' --discord)
 
 basic input: dex [contact] to list details
 
-list all contacts, check if exists, update, delete, etc
-
-listing what platforms a contact is on (can use this to find unions for mass communication)
+=head2 DONE
+help: dex OR dex -h
+list all contacts: dex -l
+contact exists?: dex -e [contact]
 
 store as json and serialize/deserialize to perl
+
+=head2 TODO
+add: dex -a [contact] -p [platform list] -v [value list]
+update: dex -u [contact] -p [platform] -v [value]
+delete: dex -d [contact] OR dex -d [contact] -p [platform]
+list platforms a contact is on: dex -o [contact]
 
 pop into $editor to create new contacts
 
 imports from thunderbird, gcontacts, etc
 
+enforcing full uppercase
+
 output anki cards of contact name and info
 
 https://perldoc.perl.org/Getopt::Std
-https://perldoc.perl.org/Getopt::Long
 https://perldoc.perl.org/JSON::PP
 
 =cut

@@ -18,6 +18,18 @@ sub listc() { for (sort keys %C) { say $_; } }
 
 sub existp($) { return True if exists $C{$_[0]}; return False; }
 
+sub main() {
+    getopts 'lhe:u:p:v:a:d:';
+    listc if $opt_l;
+    listps if $opt_o; #need to impl
+    say existp $opt_e if $opt_e;
+    if ($opt_a) { return "Need platform(s) and value(s) to add user!" unless ($opt_a && $opt_p && $opt_v); add $opt_a, $opt_p, $opt_v; } # I think this should work, but I need to test
+    if ($opt_u) { return "Platform(s) and value(s) to update user!" unless ($opt_u && $opt_p && $opt_v); } #need update function
+    if ($opt_d) { return delete $C{$opt_d} unless $opt_p; delete $C{$opt_d}->{$opt_p}; } # should work
+    help if $opt_h;
+    return '';
+}
+
 help unless @ARGV;
 
 # load from file
@@ -26,11 +38,10 @@ open my $f,"<",$F; %C=%{decode_json join '',(<$f>)}; close $f;
 # dump details of person; existence is checked in details()
 if ($ARGV[0] !~ /-\w/) {say details $ARGV[0]; exit;}
 
-getopts 'lhe:';
-listc if $opt_l;
-say existp $opt_e if $opt_e;
-help if $opt_h;
+say main;
 
+# dump to file
+open my $f,">",$F; print $f encode_json \%C; close $f;
 
 
 
