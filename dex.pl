@@ -10,6 +10,8 @@ sub add($$$) {
 
 sub help() { say "Help thing here"; exit; }
 
+sub details($) { my $n=shift; say $n; while (my ($k, $v) = each %{$C{$n}}) { say "$k: $v";}}
+
 help unless @ARGV;
 
 # load from file
