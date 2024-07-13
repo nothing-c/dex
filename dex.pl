@@ -26,8 +26,7 @@ sub main() {
     listps $opt_o if $opt_o; #need to impl
     say existp $opt_e if $opt_e;
     if ($opt_a) { return "Need platform(s) and value(s) to add user!\n" unless ($opt_a && $opt_p && $opt_v); add $opt_a, $opt_p, $opt_v; } # I think this should work, but I need to test
-    if ($opt_u) { return "Platform(s) and value(s) to update user!\n" unless ($opt_u && $opt_p && $opt_v); add $opt_u, $opt_p, $opt_v; }
-    if ($opt_d) { return delete $C{$opt_d} unless $opt_p; delete $C{$opt_d}->{$opt_p}; } # should work
+    if ($opt_d) { return delete $C{$opt_d} unless $opt_p; delete $C{$opt_d}->{$opt_p}; }
     help if $opt_h;
     return '';
 }

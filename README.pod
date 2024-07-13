@@ -13,15 +13,12 @@ help: dex OR dex -h
 list all contacts: dex -l
 contact exists?: dex -e [contact]
 list platforms a contact is on: dex -o [contact]
-update: dex -u [contact] -p [platform] -v [value]
+add: dex -a [contact] -p [platform] -v [value] (also covers updating)
+delete: dex -d [contact] OR dex -d [contact] -p [platform]
 
 store as json and serialize/deserialize to perl
 
 =head2 TODO
-add: dex -a [contact] -p [platform] -v [value]
-
-delete: dex -d [contact] OR dex -d [contact] -p [platform]
-
 pop into $editor to create new contacts
 
 imports from thunderbird, gcontacts, etc
