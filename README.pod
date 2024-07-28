@@ -2,29 +2,42 @@
 
 =head1 Dex: CLI rolodex for the modern age
 
+=for html <img src="mascot.jpg" alt="dex mascot">
 
 =head2 DONE
 basic input: dex [contact] to list details
 
 help: dex OR dex -h
+
 list all contacts: dex -l
+
 contact exists?: dex -e [contact]
+
 list platforms a contact is on: dex -o [contact]
+
 add: dex -a [contact] -p [platform] -v [value] (also covers updating)
+
 delete: dex -d [contact] OR dex -d [contact] -p [platform]
 
 store as json and serialize/deserialize to perl
 
-=head2 TODO
-pop into $editor to create new contacts
-
 fill out help function
+
+=head2 TODO
 
 imports from thunderbird, gcontacts, etc
 
-output anki cards of contact name and info
+- https://en.wikipedia.org/wiki/VCard
 
-https://perldoc.perl.org/Getopt::Std
-https://perldoc.perl.org/JSON::PP
+- https://datatracker.ietf.org/doc/html/rfc6350
+
+- FN (name), EMAIL, IMPP (instant messaging), TEL (various phones), ADR (address), URL (only parts I care about)
+
+- do a test import w/ my gcontacts
+
+grep /^[FEITAU].+[LPRN][:;]/i,(<$f>); # should work
+
+vcf export (discord et all in NOTES section)
+
 
 =cut
